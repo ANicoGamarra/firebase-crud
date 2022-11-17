@@ -1,0 +1,50 @@
+
+
+  <div class="container">
+    <div class="justify-content-end">
+      <button class="btn btn-outline-danger"(click)="logout()"> LogOut</button> 
+    </div>  
+
+    <form [formGroup]="editForm" novalidate>
+      <div class="form-group">
+        <label for="Patente">Patente</label>
+        <div class="input-group">
+          <input formControlName="patente" class="form-control" required type="text">                  
+        </div>
+      </div>         
+    
+      <div class="form-group">
+        <label for="Descripcion">Descripcion</label>
+        <div class="input-group">
+          <input formControlName="descripcion" class="form-control" required type="text">
+        </div>
+      </div>
+
+
+
+    </form>
+  
+  
+    <button class="btn btn-success" (click)="guardarDatos()">
+      guardar
+    </button>
+
+    <div class="d-flex">
+      <div *ngFor="let playa of playaCompleta">
+        <div class = "col-4 border ">
+            <p> Id: {{playa.id}} </p>
+            <p> Patente: {{playa.patente}} </p>
+            <p> Descripcion: {{playa.descripcion}} </p>
+            <p> Date: {{playa.fechas.fechaDate}} </p>
+            <p> Tarifa: {{playa.tarifa.nombre}} </p>
+            <p> Saldo:{{playa.saldo}} </p>
+            <p> Codigo Barras: {{playa.codigoBarras}} </p>
+        </div>
+      </div>
+
+    </div>
+  
+</div>
+
+
+

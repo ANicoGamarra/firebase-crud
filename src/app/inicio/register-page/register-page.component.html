@@ -1,0 +1,40 @@
+<div class="background">
+    <div class="login-container">
+      <div class="form-container">
+        <h1>Welcome to NgBytes Register</h1>
+        <h5>Register with your email</h5>
+        <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="form-control">
+              <label>Email</label>
+              <input matInput formControlName="email" type="text" required />
+              <div *ngIf="email?.hasError('required') && email?.touched" class="text-danger fs-6" >
+                Email is required
+              </div>
+              <div *ngIf="email?.hasError('email') && email?.touched" class="text-danger fs-6">
+                Email isn't valid. Please enter a valid email.
+              </div>
+            </div>
+            <div class="form-control">
+              <label>Password</label>
+              <input matInput formControlName="password" type="password" required />
+              <div *ngIf="password?.hasError('required') && password?.touched" class="text-danger fs-6">
+                Password is required
+              </div>
+            </div>
+            <div class="form-footer">
+              <button [disabled]="form.invalid" mat-raised-button type="submit">
+                Submit
+              </button>
+            </div>
+          </form>
+      </div>
+      <div class="text-container">
+        <h1>Hey Buddy</h1>
+        <p>
+          Already have an awesome account? Go ahead and click the button below to
+          sign in!
+        </p>
+        <button class="btn bt" routerLink="/">Sign in</button>
+      </div>
+    </div>
+  </div>
